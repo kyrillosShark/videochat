@@ -22,7 +22,6 @@ import cv2
 
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_socketio import SocketIO, join_room, emit
-from pyngrok import ngrok, conf
 
 # --------------------- Configuration ---------------------
 PORT = int(os.getenv('PORT', 8000))
@@ -364,34 +363,11 @@ def internal_error(error):
     flash('An internal server error occurred. Please try again later.')
     return redirect(url_for('index'))
 
-# --------------------- ngrok Integration (Optional) ---------------------
-def start_ngrok():
-    """
-    Starts an ngrok tunnel for quick testing outside localhost.
-    """
-    try:
-        NGROK_AUTH_TOKEN = os.getenv('NGROK_AUTH_TOKEN', 'YOUR_NGROK_AUTH_TOKEN')
-        if NGROK_AUTH_TOKEN == 'YOUR_NGROK_AUTH_TOKEN':
-            print("ngrok auth token not set. Skipping ngrok setup.")
-            return None
-            
-        conf.get_default().auth_token = NGROK_AUTH_TOKEN
-        http_tunnel = ngrok.connect(PORT, "http")
-        public_url = http_tunnel.public_url
-        print(f"ngrok tunnel created: {public_url} -> http://127.0.0.1:{PORT}")
-        return public_url
-    except Exception as e:
-        print(f"Failed to start ngrok: {e}")
-        return None
-
+# --------------------- Deployment on AWS ---------------------
 def start_app():
     """
-    Optionally starts ngrok, then runs the Flask-SocketIO server.
+    Runs the Flask-SocketIO server.
     """
-    public_url = start_ngrok()
-    if public_url:
-        print(f"Application publicly accessible at: {public_url}")
-
     print(f"Starting server on port {PORT}...")
     socketio.run(app, host='0.0.0.0', port=PORT)
 
