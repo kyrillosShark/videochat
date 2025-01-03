@@ -111,7 +111,11 @@ The path in the code is `MODEL_PATH = "action.h5"`. Change it if necessary.
 4. **Toggle Features** in the top toolbar:
    - **Toggle Video** / **Toggle Audio** to enable or disable your camera or mic.
    - **Enable Sign Language**: Start sending frames to the server for sign detection.
-   - **Enable TTS**: Speak out recognized signs locally (for you only).
+   - **Enable TTS**: Speak out recognized signs locally.
+
+
+https://github.com/user-attachments/assets/d84f1bb3-2e89-4395-8467-4ec927070e3f
+
 
 5. **Leave** the meeting when finished.
 
