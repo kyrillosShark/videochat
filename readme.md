@@ -52,7 +52,7 @@ This repository includes:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
+git clone https://github.com/kyrillosshark/videochat.git
 cd <your-repo-name>
 ```
 
