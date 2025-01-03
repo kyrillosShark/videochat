@@ -1,7 +1,3 @@
-Below is a **sample `README.md`** you can include in your GitHub repository. It covers the purpose of the project, setup steps, usage instructions, and common troubleshooting tips. Adjust the content as needed for your specific environment and preferences.
-
----
-
 # Real-Time Sign Language Detection & WebRTC Video Chat
 
 A Flask + Socket.IO application that provides:
