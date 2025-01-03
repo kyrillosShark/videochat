@@ -53,7 +53,7 @@ This repository includes:
 
 ```bash
 git clone https://github.com/kyrillosshark/videochat.git
-cd <your-repo-name>
+cd videochat
 ```
 
 ### 2. Create a Virtual Environment (Recommended)
@@ -95,7 +95,7 @@ The path in the code is `MODEL_PATH = "action.h5"`. Change it if necessary.
 
 1. **Run the Server**  
    ```bash
-   python app.py
+   python main.py
    ```
    By default, it starts at `http://localhost:8000`.
 
@@ -123,7 +123,7 @@ If you want to quickly share your local server with an external user:
 1. Set `NGROK_AUTH_TOKEN` in your environment.
 2. The code attempts to start an ngrok tunnel on port `8000`:
    ```bash
-   python app.py
+   python main.py
    ```
 3. Copy the generated ngrok URL from your terminal logs.
 
